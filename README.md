@@ -8,12 +8,11 @@ Build your own dream interpretation app with React Native and Expo. This product
   <img src="screenshots/01.jpeg" width="220" alt="Daily Dream Symbol" />
   <img src="screenshots/02.jpeg" width="220" alt="Browse A-Z" />
   <img src="screenshots/03.jpeg" width="220" alt="Search Dreams" />
-  <img src="screenshots/04.jpeg" width="220" alt="Random Symbols" />
 </p>
 <p align="center">
+  <img src="screenshots/04.jpeg" width="220" alt="Random Symbols" />
   <img src="screenshots/05.jpeg" width="220" alt="Symbol Details" />
   <img src="screenshots/06.jpeg" width="220" alt="Full Interpretation" />
-  <img src="screenshots/07.jpeg" width="220" alt="Dark Mode" />
 </p>
 
 ## What You Can Build
