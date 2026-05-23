@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const USER_ID_KEY = '@roxyapi_numerology_user_id';
+const USER_ID_KEY = '@roxyapi_dreams_user_id';
 
 export const useUserId = () => {
   const [userId, setUserId] = useState<string | null>(null);

@@ -1,237 +1,182 @@
-# RoxyAPI Dreams Starter - Dream Interpretation App
+# Dreams Starter App
 
-Build your own dream interpretation app with React Native and Expo. This production-ready starter connects to the RoxyAPI Dreams API to decode dream meanings, search 2,000+ dream symbols, and help users understand what their dreams mean. Perfect for creating dream dictionary apps, dream journal apps with symbol lookup, or dream meaning search tools.
+[![Get API Key](https://img.shields.io/badge/Get_API_Key-roxyapi.com-black?style=for-the-badge)](https://roxyapi.com/pricing)
+[![API Docs](https://img.shields.io/badge/API_Docs-Reference-black?style=for-the-badge)](https://roxyapi.com/api-reference#tag/dreams)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black?style=for-the-badge)](LICENSE)
+
+Open-source React Native (Expo) template for a dream interpretation app: a seeded daily dream symbol, an A to Z dream dictionary, keyword search across 2,000+ dream symbols, and random symbol discovery. Built on the [Roxy](https://roxyapi.com) Dreams API and the official [@roxyapi/sdk](https://www.npmjs.com/package/@roxyapi/sdk). One API key, every dreams endpoint, full control over your native UI.
+
+Fork it, set one environment variable, and ship.
 
 ## Screenshots
 
 <p align="center">
-  <img src="screenshots/01.jpeg" width="220" alt="Daily Dream Symbol" />
-  <img src="screenshots/02.jpeg" width="220" alt="Browse A-Z" />
-  <img src="screenshots/03.jpeg" width="220" alt="Search Dreams" />
+  <img src="screenshots/01.jpeg" width="250" alt="Daily Dream Symbol" />
+  <img src="screenshots/02.jpeg" width="250" alt="Browse A-Z" />
+  <img src="screenshots/03.jpeg" width="250" alt="Search Dreams" />
 </p>
 <p align="center">
-  <img src="screenshots/04.jpeg" width="220" alt="Random Symbols" />
-  <img src="screenshots/05.jpeg" width="220" alt="Symbol Details" />
-  <img src="screenshots/06.jpeg" width="220" alt="Full Interpretation" />
+  <img src="screenshots/04.jpeg" width="250" alt="Random Symbols" />
+  <img src="screenshots/05.jpeg" width="250" alt="Symbol Details" />
+  <img src="screenshots/06.jpeg" width="250" alt="Full Interpretation" />
 </p>
 
-## What You Can Build
+## What you get
 
-Create professional dream analysis apps with features users love:
+- **Daily symbol** seeded per device, so a user sees the same dream symbol all day, with a concise daily message and the full interpretation one tap away.
+- **A to Z dictionary** that browses every dream symbol by starting letter, backed by live per-letter counts.
+- **Keyword search** across 2,000+ dream meanings: flying dreams, teeth falling out, snake dreams, water dreams, being chased, and thousands more.
+- **Random discovery** of multiple symbols for journaling prompts and meditation.
+- **Full interpretations** covering subconscious symbolism, emotional significance, and connections to waking life.
+- **Dark mode** with a purple dream theme that follows the device setting.
 
-- **Daily Dream Symbol**: Random dream symbol discovery - perfect for "dream of the day" features
-- **A-Z Dream Dictionary**: Browse all dream symbols alphabetically - from abandonment dreams to zodiac dreams
-- **Dream Symbol Search**: Search 2,000+ dream meanings by keyword - find what flying dreams mean, teeth falling out symbolism, snake dreams interpretation, water dreams, death dreams, and more
-- **Random Dream Discovery**: Get multiple random symbols for meditation and dream exploration
-- **Full Dream Interpretations**: Tap any symbol for complete psychological meanings covering subconscious symbolism, emotional significance, and connections to waking life
-- **Dark Mode Support**: Beautiful purple dream theme with automatic dark mode
-- **Type-Safe API**: Auto-generated TypeScript types from OpenAPI schema
+## Stack
 
-## Perfect For Building
+| Technology | Purpose |
+|-----------|---------|
+| [Expo SDK 54](https://expo.dev) | React Native runtime and build tooling |
+| [Expo Router](https://docs.expo.dev/router/introduction/) | File-based navigation with bottom tabs |
+| [@roxyapi/sdk](https://www.npmjs.com/package/@roxyapi/sdk) | Fully typed RoxyAPI client. One key, every domain. |
+| [NativeWind v4](https://www.nativewind.dev) | Tailwind CSS for React Native |
+| [Roxy Dreams API](https://roxyapi.com/products/dreams-api) | 2,000+ dream symbols with psychological interpretations |
 
-- Dream interpretation apps for iOS and Android
-- Dream dictionary and symbol lookup tools  
-- Dream journal apps with meaning search
-- Dream meaning websites and mobile apps
-- Meditation and spiritual wellness apps
-- Psychology and self-discovery tools
+## Quick start
 
-## Tech Stack
-
-Modern, production-ready technologies:
-
-- **Expo SDK 54** - React Native development platform
-- **Expo Router** - File-based navigation with bottom tabs
-- **TypeScript** - Type-safe development with auto-generated API types
-- **NativeWind v4** - Tailwind CSS for React Native styling
-- **openapi-fetch** - Type-safe API client
-- **Lucide Icons** - Beautiful icons for navigation
-- **RoxyAPI Dreams API** - Professional dream interpretation with 2,000+ symbols
-- **Auto-generated Types** - TypeScript types from OpenAPI schema
-
-## Quick Start
-
-### 1. Clone and Install
+### 1. Clone and install
 
 ```bash
-git clone https://github.com/RoxyAPI/dreams-starter-app
+git clone https://github.com/RoxyAPI/dreams-starter-app.git
 cd dreams-starter-app
 npm install
 ```
 
-### 2. Get Your API Key
+### 2. Get your API key
 
-Visit [roxyapi.com/pricing](https://roxyapi.com/pricing) to get your API key. 
+Get instant access at **[roxyapi.com/pricing](https://roxyapi.com/pricing)**. One key unlocks every dreams endpoint. Add it to `.env`:
 
-**Why RoxyAPI Dreams API?**
-- 2,000+ dream symbols with psychological meanings
-- Covers all major dream themes: animals (snake, spider, dog), scenarios (falling, flying, being chased), people (mother, father, ex), objects (car, house, water, fire), emotions (fear, anxiety, love), body parts (teeth falling out, hair, eyes)
-- Detailed 300-500 word interpretations for each symbol
-- RESTful API with OpenAPI schema
-- Type-safe integration with auto-generated types
-- Fast response times and 99.9% uptime
-
-Learn more: [roxyapi.com/products/dreams-api](https://roxyapi.com/products/dreams-api)
-
-### 3. Configure Environment
-
-Create a `.env` file in the project root:
-
-```env
-EXPO_PUBLIC_ROXYAPI_KEY=your_api_key_here
-EXPO_PUBLIC_ROXYAPI_BASE_URL=https://roxyapi.com/api/v2
+```
+EXPO_PUBLIC_ROXYAPI_KEY=your-api-key-here
 ```
 
-### 4. Run the App
+> **Bundled key caveat.** A mobile app has no server, so any `EXPO_PUBLIC_*` value is compiled into the build and can be read off a device. For production, use a key restricted to your bundle id in the dashboard, or route calls through a thin backend proxy that holds the real key. Never ship an unrestricted key.
+
+### 3. Run
 
 ```bash
-# Start Expo development server
-npm start
-
-# Run on iOS
-npm run ios
-
-# Run on Android
-npm run android
-
-# Run on web (for testing)
-npm run web
+npm start          # dev server, then press i, a, or w
+npm run ios        # iOS simulator (macOS only)
+npm run android    # Android emulator
+npm run web        # web
 ```
 
-## Project Structure
+## How it works
 
-```
-dreams-starter-app/
-├── app/
-│   └── (tabs)/
-│       ├── index.tsx         # Daily random dream symbol
-│       ├── browse.tsx        # A-Z dream dictionary browser
-│       ├── search.tsx        # Dream symbol search
-│       ├── random.tsx        # Random symbol discovery
-│       └── _layout.tsx       # Tab navigation
-├── src/
-│   ├── api/
-│   │   ├── client.ts         # API client setup
-│   │   ├── dreams.ts         # Dream API methods
-│   │   ├── schema.ts         # Generated types from OpenAPI
-│   │   └── types.ts          # Type exports
-│   ├── components/
-│   │   ├── RoxyBranding.tsx       # API key setup screen
-│   │   └── SymbolDetailModal.tsx  # Symbol detail modal
-│   └── constants/
-│       └── colors.ts         # Purple dream theme colors
-├── assets/                   # App icons and branding
-├── .env                      # Environment variables (gitignored)
-└── package.json
+The SDK is the only data layer. There is no generated schema file to keep in sync: `@roxyapi/sdk` ships its own types from the same OpenAPI spec the API serves, so a response flows straight into a screen with no glue code.
+
+### One typed client
+
+```ts
+// src/api/client.ts
+import { createRoxy } from '@roxyapi/sdk';
+
+const key = process.env.EXPO_PUBLIC_ROXYAPI_KEY ?? '';
+export const roxy = createRoxy(key);
+export const hasApiKey = (): boolean => Boolean(key);
 ```
 
-## API Endpoints Used
+### One data layer, screens stay thin
 
-The app demonstrates these RoxyAPI Dreams endpoints:
+Every screen imports from `src/api`. The data layer wraps each `roxy.dreams.*` call and unwraps the SDK `{ data, error }` result into either the response or one thrown error the screen can catch:
 
-```typescript
-// Get dream symbol by ID
-GET /symbols/{id}
-// Returns: { id, name, letter, meaning }
-
-// Search dream symbols
-GET /symbols?search=water&letter=w&limit=50&offset=0
-// Perfect for: "what do water dreams mean", "snake dream meaning", etc.
-
-// Random dream symbols
-GET /symbols/random?count=3
-// For: daily dream features, random symbol discovery
-
-// Letter counts (A-Z navigation)
-GET /symbols/letters
-// Returns: { letters: { a: 138, b: 282, ... }, total: 2526 }
+```ts
+// src/api/dreams.ts
+export const dreamsApi = {
+  getDailySymbol: async (body) => unwrap(await roxy.dreams.getDailyDreamSymbol({ body }), 'Failed to get daily symbol'),
+  // ...
+};
 ```
 
-## Type Safety
-
-Auto-generated TypeScript types from OpenAPI schema:
-
-```bash
-# Regenerate types when API updates
-npm run generate:types
+```tsx
+// app/(tabs)/index.tsx
+const data = await dreamsApi.getDailySymbol({ seed: deviceId });
+// data.symbol.name, data.symbol.meaning, data.dailyMessage
 ```
 
-Types automatically generated from:
-```
-https://roxyapi.com/api/v2/dreams/openapi.json
-```
+## Featured endpoints
 
-All API calls are fully typed - no `any` types, full autocomplete in your IDE.
+The highest-demand dreams endpoints, in the order you are most likely to ship them. Every method name and field below comes from the [OpenAPI spec](https://roxyapi.com/api/v2/dreams/openapi.json).
 
-## Styling
+```ts
+import { createRoxy } from '@roxyapi/sdk';
 
-Built with **NativeWind v4** (Tailwind CSS for React Native):
+const roxy = createRoxy(process.env.EXPO_PUBLIC_ROXYAPI_KEY!);
 
-- `className="text-3xl font-bold text-zinc-900 dark:text-white"` - Tailwind classes work in React Native
-- Automatic dark mode with `dark:` prefix
-- Purple brand color (`purple-600`) for dream theme
-- Zinc gray scale for text and backgrounds
-- Responsive design with mobile-first approach
+// 1. Symbol detail. Every "what does it mean to dream about X" page lands here.
+const { data: symbol } = await roxy.dreams.getDreamSymbol({ path: { id: 'flying' } });
+// symbol.id, symbol.name, symbol.letter, symbol.meaning
 
-## Building for Production
+// 2. Symbol search. Keyword match across names and meanings, with pagination.
+const { data: results } = await roxy.dreams.searchDreamSymbols({ query: { q: 'water', limit: 20 } });
+// results.total, results.symbols[].id, results.symbols[].name
 
-### iOS
+// 3. Symbol list by letter. Powers A to Z dream dictionary navigation.
+const { data: page } = await roxy.dreams.searchDreamSymbols({ query: { letter: 's', limit: 50 } });
 
-```bash
-eas build --platform ios
-```
+// 4. Daily symbol. Seed per device for the same symbol all day.
+const { data: daily } = await roxy.dreams.getDailyDreamSymbol({ body: { seed: 'device-42' } });
+// daily.date, daily.symbol.name, daily.dailyMessage
 
-### Android
-
-```bash
-eas build --platform android
+// 5. Letter counts. One call builds the whole A to Z navigation.
+const { data: counts } = await roxy.dreams.getSymbolLetterCounts();
+// counts.letters (map of letter to count), counts.total
 ```
 
-Requires [Expo Application Services (EAS)](https://expo.dev/eas) account.
+This template uses 5 of the dreams endpoints. Browse the rest in the [API reference](https://roxyapi.com/api-reference#tag/dreams).
 
-## Customization Ideas
+## Project structure
 
-1. **Add Dream Journal**: Save user's dreams with dates, symbols, and personal notes using AsyncStorage or Supabase
-2. **Recurring Patterns**: Track symbols appearing across multiple dreams and show patterns
-3. **Dream Analysis**: Combine multiple symbols for comprehensive dream interpretation
-4. **Share Dreams**: Add share functionality for symbols and interpretations
-5. **Push Notifications**: Daily dream symbol notifications to engage users
-6. **Dream Categories**: Group symbols by theme (animals, emotions, objects, scenarios)
-7. **Multi-language**: The API returns English interpretations - add i18n for UI text
-8. **Favorites**: Let users bookmark favorite symbols or save dream interpretations
-9. **Dream Mood Tracking**: Track emotions associated with dreams over time
-10. **Custom Colors**: Modify `src/constants/colors.ts` for your brand colors
+```
+app/                          # Expo Router screens
+├── _layout.tsx               # Root Stack
+└── (tabs)/
+    ├── _layout.tsx           # Bottom tabs
+    ├── index.tsx             # Daily symbol
+    ├── browse.tsx            # Browse A to Z with letter counts
+    ├── search.tsx            # Keyword search
+    └── random.tsx            # Random symbol discovery
+src/
+├── api/
+│   ├── client.ts             # The one Roxy SDK client + hasApiKey guard
+│   ├── dreams.ts             # Wraps roxy.dreams.*, unwraps { data, error }
+│   ├── types.ts              # SDK response types under app-friendly names
+│   └── index.ts              # Barrel export
+├── components/
+│   ├── RoxyBranding.tsx      # API key setup screen
+│   └── SymbolDetailModal.tsx # Full interpretation modal
+├── constants/colors.ts       # appColors for React Native props
+└── hooks/useUserId.ts        # Stable device id in AsyncStorage, used as the daily seed
+```
 
-## SEO Keywords
+## Customize
 
-This starter helps you build apps for:
-- Dream interpretation and meaning
-- Dream dictionary and symbol lookup
-- What dreams mean (flying, falling, snake, water, teeth, death)
-- Dream analysis and psychology
-- Dream journal with symbol search
-- Subconscious mind interpretation
-- Spiritual dream meanings
-- Dream symbolism database
+- **Add a feature.** Pick a dreams method, add a wrapper in `src/api/dreams.ts`, call it from a screen. The SDK types come from the spec, so new endpoints flow through with no manual typing.
+- **Change the theme.** This app uses Tailwind colors through NativeWind. Swap `purple-600` in the screen `className` strings for any Tailwind color, and update `appColors.primary` in `src/constants/colors.ts` for the React Native props.
+- **Add a journal.** Save each dream with its date and the symbols a user tapped into using AsyncStorage, then track recurring patterns over time.
 
-## Learn More
+## Why Roxy
 
-- **Product Page**: [roxyapi.com/products/dreams-api](https://roxyapi.com/products/dreams-api)
-- **API Documentation**: [roxyapi.com/docs](https://roxyapi.com/docs)
-- **OpenAPI Schema**: [roxyapi.com/api/v2/dreams/openapi.json](https://roxyapi.com/api/v2/dreams/openapi.json)
-- **Get API Key**: [roxyapi.com/pricing](https://roxyapi.com/pricing)
-- **Expo Documentation**: [docs.expo.dev](https://docs.expo.dev)
+- **Breadth.** Dreams plus Western astrology, Vedic astrology, numerology, tarot, biorhythm, I Ching, crystals, and angel numbers under one key.
+- **Type-safe.** The SDK types come from one OpenAPI pipeline, so response shapes cannot drift from what the API returns.
+- **Remote MCP.** Connect AI agents to every dreams endpoint at `roxyapi.com/mcp/dreams`, no local setup.
 
-## Support
+## Links
 
-- **API Issues**: [roxyapi.com/contact](https://roxyapi.com/contact)
-- **Starter Issues**: Open a GitHub issue
-- **FAQ**: [roxyapi.com/faq](https://roxyapi.com/faq)
+- [Dreams API](https://roxyapi.com/products/dreams-api)
+- [API reference and playground](https://roxyapi.com/api-reference#tag/dreams)
+- [Get API key](https://roxyapi.com/pricing)
+- [All templates](https://roxyapi.com/starters)
+- [Connect AI agents via MCP](https://roxyapi.com/docs/mcp)
 
 ## License
 
-MIT - Feel free to use this starter for your own dream interpretation app projects.
-
----
-
-**Built with ❤️ using [RoxyAPI](https://roxyapi.com) - Professional APIs for developers**
+MIT

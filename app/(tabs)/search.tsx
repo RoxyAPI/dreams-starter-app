@@ -26,7 +26,7 @@ export default function SearchScreen() {
     setSearched(true);
 
     try {
-      const data = await dreamsApi.listSymbols({ search: query, limit: 100 });
+      const data = await dreamsApi.listSymbols({ q: query, limit: 50 });
       setSymbols(data.symbols);
     } catch {
       setError('Failed to search symbols');

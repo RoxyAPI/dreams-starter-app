@@ -48,7 +48,7 @@ export default function BrowseScreen() {
   const fetchSymbols = async (letter: string) => {
     setLoadingSymbols(true);
     try {
-      const data = await dreamsApi.listSymbols({ letter, limit: 100 });
+      const data = await dreamsApi.listSymbols({ letter, limit: 50 });
       setSymbols(data.symbols);
     } catch {
       setError('Failed to load symbols');

@@ -1,51 +1,41 @@
-import { apiClient } from './client';
-import type { DreamSymbol, BasicDreamSymbol, SymbolsListResponse, RandomSymbolsResponse, LetterCountsResponse } from './types';
+import { roxy } from './client';
+import type {
+  DreamSymbol,
+  GetDreamsSymbolsResponse,
+  GetDreamsSymbolsByIdResponse,
+  GetDreamsSymbolsLettersResponse,
+  GetDreamsSymbolsData,
+  PostDreamsDailyData,
+  PostDreamsDailyResponse,
+} from '@roxyapi/sdk';
+
+type SdkResult<T> = { data?: T; error?: unknown };
+
+/**
+ * Unwrap a Roxy SDK result, returning `data` or throwing a screen-friendly message. The SDK never throws on a non-2xx response: it returns `{ data, error }`, so every call site funnels through here to turn an error into one thrown `Error` the screens can catch.
+ */
+const unwrap = <T>(result: SdkResult<T>, message: string): T => {
+  if (result.error || !result.data) throw new Error(message);
+  return result.data;
+};
+
+/** Query and body shapes pulled from the SDK request types so the screens cannot drift from the spec. Dreams is English-only, so there is no `lang` parameter. */
+export type ListSymbolsQuery = NonNullable<GetDreamsSymbolsData['query']>;
+export type DailySymbolRequest = NonNullable<PostDreamsDailyData['body']>;
 
 export const dreamsApi = {
-  /**
-   * List and search dream symbols
-   */
-  listSymbols: async (params?: {
-    search?: string;
-    letter?: string;
-    limit?: number;
-    offset?: number;
-  }): Promise<SymbolsListResponse> => {
-    const { data, error } = await apiClient.GET('/symbols', {
-      params: { query: params },
-    });
-    if (error) throw new Error('Failed to fetch symbols');
-    return data;
-  },
+  listSymbols: async (query?: ListSymbolsQuery): Promise<GetDreamsSymbolsResponse> =>
+    unwrap(await roxy.dreams.searchDreamSymbols({ query }), 'Failed to fetch symbols'),
 
-  /**
-   * Get a specific dream symbol by ID
-   */
-  getSymbol: async (id: string): Promise<DreamSymbol> => {
-    const { data, error } = await apiClient.GET('/symbols/{id}', {
-      params: { path: { id } },
-    });
-    if (error) throw new Error('Symbol not found');
-    return data;
-  },
+  getSymbol: async (id: string): Promise<GetDreamsSymbolsByIdResponse> =>
+    unwrap(await roxy.dreams.getDreamSymbol({ path: { id } }), 'Symbol not found'),
 
-  /**
-   * Get random dream symbol(s)
-   */
-  getRandomSymbols: async (count: number = 1): Promise<DreamSymbol[]> => {
-    const { data, error } = await apiClient.GET('/symbols/random', {
-      params: { query: { count } },
-    });
-    if (error) throw new Error('Failed to fetch random symbols');
-    return data.symbols;
-  },
+  getRandomSymbols: async (count = 1): Promise<DreamSymbol[]> =>
+    unwrap(await roxy.dreams.getRandomSymbols({ query: { count } }), 'Failed to fetch random symbols').symbols,
 
-  /**
-   * Get symbol counts by letter
-   */
-  getLetterCounts: async (): Promise<LetterCountsResponse> => {
-    const { data, error } = await apiClient.GET('/symbols/letters');
-    if (error) throw new Error('Failed to fetch letter counts');
-    return data;
-  },
+  getLetterCounts: async (): Promise<GetDreamsSymbolsLettersResponse> =>
+    unwrap(await roxy.dreams.getSymbolLetterCounts(), 'Failed to fetch letter counts'),
+
+  getDailySymbol: async (body?: DailySymbolRequest): Promise<PostDreamsDailyResponse> =>
+    unwrap(await roxy.dreams.getDailyDreamSymbol({ body: body ?? {} }), 'Failed to get daily symbol'),
 };
