@@ -2,7 +2,7 @@
 
 [![Get API Key](https://img.shields.io/badge/Get_API_Key-roxyapi.com-black?style=for-the-badge)](https://roxyapi.com/pricing)
 [![API Docs](https://img.shields.io/badge/API_Docs-Reference-black?style=for-the-badge)](https://roxyapi.com/api-reference#tag/dreams)
-[![License: MIT](https://img.shields.io/badge/License-MIT-black?style=for-the-badge)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black?style=for-the-badge)](https://github.com/RoxyAPI/dreams-starter-app/blob/main/LICENSE)
 
 Open-source React Native (Expo) template for a dream interpretation app: a seeded daily dream symbol, an A to Z dream dictionary, keyword search across 2,000+ dream symbols, and random symbol discovery. Built on the [Roxy](https://roxyapi.com) Dreams API and the official [@roxyapi/sdk](https://www.npmjs.com/package/@roxyapi/sdk). One API key, every dreams endpoint, full control over your native UI.
 
@@ -11,14 +11,14 @@ Fork it, set one environment variable, and ship.
 ## Screenshots
 
 <p align="center">
-  <img src="screenshots/01.jpeg" width="250" alt="Daily Dream Symbol" />
-  <img src="screenshots/02.jpeg" width="250" alt="Browse A-Z" />
-  <img src="screenshots/03.jpeg" width="250" alt="Search Dreams" />
+  <img src="https://raw.githubusercontent.com/RoxyAPI/dreams-starter-app/main/screenshots/01.jpeg" width="250" alt="Daily Dream Symbol" />
+  <img src="https://raw.githubusercontent.com/RoxyAPI/dreams-starter-app/main/screenshots/02.jpeg" width="250" alt="Browse A-Z" />
+  <img src="https://raw.githubusercontent.com/RoxyAPI/dreams-starter-app/main/screenshots/03.jpeg" width="250" alt="Search Dreams" />
 </p>
 <p align="center">
-  <img src="screenshots/04.jpeg" width="250" alt="Random Symbols" />
-  <img src="screenshots/05.jpeg" width="250" alt="Symbol Details" />
-  <img src="screenshots/06.jpeg" width="250" alt="Full Interpretation" />
+  <img src="https://raw.githubusercontent.com/RoxyAPI/dreams-starter-app/main/screenshots/04.jpeg" width="250" alt="Random Symbols" />
+  <img src="https://raw.githubusercontent.com/RoxyAPI/dreams-starter-app/main/screenshots/05.jpeg" width="250" alt="Symbol Details" />
+  <img src="https://raw.githubusercontent.com/RoxyAPI/dreams-starter-app/main/screenshots/06.jpeg" width="250" alt="Full Interpretation" />
 </p>
 
 ## What you get
