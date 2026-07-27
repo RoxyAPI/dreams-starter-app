@@ -1,6 +1,6 @@
 # Agents Guide
 
-This is a RoxyAPI starter app. A dream interpretation app built with React Native, Expo SDK 54, and TypeScript. Ships with a daily seeded dream symbol, an A to Z dream dictionary, keyword search across 2,000+ dream symbols, and random symbol discovery, all powered by the RoxyAPI Dreams API through the official `@roxyapi/sdk`.
+This is a RoxyAPI starter app. A dream interpretation app built with React Native, Expo SDK 57, and TypeScript. Ships with a daily seeded dream symbol, an A to Z dream dictionary, keyword search across 2,000+ dream symbols, and random symbol discovery, all powered by the RoxyAPI Dreams API through the official `@roxyapi/sdk`.
 
 ## Setup
 - Get an API key at https://roxyapi.com/pricing
