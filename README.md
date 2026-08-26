@@ -165,7 +165,7 @@ src/
 
 ## Why Roxy
 
-- **Breadth.** Dreams plus Western astrology, Vedic astrology, numerology, tarot, biorhythm, I Ching, crystals, and angel numbers under one key.
+- **Breadth.** Dreams plus Western astrology, Vedic astrology, forecast, human design, Chinese astrology, feng shui, numerology, tarot, biorhythm, I Ching, crystals, and angel numbers under one key.
 - **Type-safe.** The SDK types come from one OpenAPI pipeline, so response shapes cannot drift from what the API returns.
 - **Remote MCP.** Connect AI agents to every dreams endpoint at `roxyapi.com/mcp/dreams`, no local setup.
 
