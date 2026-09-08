@@ -174,7 +174,7 @@ src/
 - [Dreams API](https://roxyapi.com/products/dreams-api)
 - [API reference and playground](https://roxyapi.com/api-reference#tag/dreams)
 - [Get API key](https://roxyapi.com/pricing)
-- [All templates](https://roxyapi.com/starters)
+- [All templates](https://roxyapi.com/templates)
 - [Connect AI agents via MCP](https://roxyapi.com/docs/mcp)
 
 ## License
